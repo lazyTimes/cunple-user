@@ -9,13 +9,13 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.myapp</groupId>
-    <artifactId>cunple</artifactId>
+    <artifactId>cunple-user</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>cunple</name>
+    <name>cunple-user</name>
     <description>Demo project for Spring Boot</description>
     <modules>
-        <module>cunple-app</module>
-        <module>cunple-service-api</module>
+        <module>user-app</module>
+        <module>user-service-api</module>
     </modules>
     <properties>
         <java.version>1.8</java.version>

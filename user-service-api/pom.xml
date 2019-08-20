@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.myapp</groupId>
-    <artifactId>cunple-service-api</artifactId>
+    <artifactId>cunple-user-service-api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>cunple-service-api</name>
+    <name>cunple-user-service-api</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
