@@ -1,6 +1,6 @@
-package com.myapp.cunpleapp.service.impl;
+package com.myapp.cunpleuserapp.service.impl;
 
-import com.myapp.cunpleapp.service.MyTestService;
+import com.myapp.cunpleuserapp.service.MyTestService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

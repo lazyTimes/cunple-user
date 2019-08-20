@@ -1,4 +1,4 @@
-package com.myapp.cunpleapp.model;
+package com.myapp.cunpleuserapp.model;
 
 import java.util.ArrayList;
 import java.util.Date;

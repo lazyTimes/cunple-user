@@ -1,7 +1,4 @@
-package com.myapp.cunpleapp.mapper;
-
-import com.myapp.cunpleapp.model.TCoupon;
-import com.myapp.cunpleapp.model.TCouponExample;
+package com.myapp.cunpleuserapp.mapper;
 
 import static org.apache.ibatis.jdbc.SqlBuilder.BEGIN;
 import static org.apache.ibatis.jdbc.SqlBuilder.DELETE_FROM;
@@ -16,6 +13,8 @@ import static org.apache.ibatis.jdbc.SqlBuilder.UPDATE;
 import static org.apache.ibatis.jdbc.SqlBuilder.VALUES;
 import static org.apache.ibatis.jdbc.SqlBuilder.WHERE;
 
+import com.myapp.cunpleuserapp.model.TCoupon;
+import com.myapp.cunpleuserapp.model.TCouponExample;
 
 import java.util.List;
 import java.util.Map;

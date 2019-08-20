@@ -1,6 +1,4 @@
-package com.myapp.cunpleapp.service;
-
-import org.springframework.stereotype.Service;
+package com.myapp.cunpleuserapp.service;
 
 /**
  * 业务层测试

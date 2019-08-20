@@ -1,12 +1,12 @@
-package com.myapp.cunpleapp.mapper;
+package com.myapp.cunpleuserapp.mapper;
 
-import com.myapp.cunpleapp.model.TCoupon;
-import com.myapp.cunpleapp.model.TCouponExample;
-
-import java.util.List;
+import com.myapp.cunpleuserapp.model.TCoupon;
+import com.myapp.cunpleuserapp.model.TCouponExample;
 
 import org.apache.ibatis.annotations.*;
 import org.apache.ibatis.type.JdbcType;
+
+import java.util.List;
 
 
 public interface TCouponMapper {
