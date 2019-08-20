@@ -6,6 +6,7 @@ druid:
   login:
     user_name: root
     password: root
+
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
@@ -32,3 +33,34 @@ spring:
 mybatis:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+# dubbo config
+# 应⽤用定义了了提供⽅方应⽤用信息，⽤用于计算依赖关系；在 dubbo-admin 或 dubbo-monitor 会显示这个
+dubbo:
+  application:
+    name: user-app
+
+  # 使⽤用 zookeeper 注册中⼼心暴暴露露服务，注意要先开启 zookeeper
+  # 注册中⼼心id
+  registry:
+    id: zookeeper-registry
+    # 注册中⼼心协议
+    protocol: zookeeper
+    # 注册中⼼心地址
+    address: 119.23.219.183:2181
+    # dubbo协议在20880端⼝口暴暴露露服务
+    # 协议名称
+  protocol:
+    name: dubbo
+    # 协议端⼝口
+    port: 20880
+    # 协议访问log
+    accesslog: dubbo-access.log
+    # 重试次数
+  provider:
+    retries: 0
+    # 超时时间
+    timeout: 3000
+    # 注册监控中⼼心
+  monitor:
+    protocol: registry
