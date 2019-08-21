@@ -16,6 +16,12 @@ public class CunpleUserAppApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(CunpleUserAppApplication.class, args);
+        Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
+            @Override
+            public void run() {
+                System.err.println("jvm 线程关闭");
+            }
+        }));
     }
 
 }
