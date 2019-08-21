@@ -24,4 +24,11 @@ public class UserController {
     public Object test(){
         return userService.getUserById(1);
     }
+
+
+    @RequestMapping("/list")
+    public Object list(){
+
+        return userService.getCouponList();
+    }
 }

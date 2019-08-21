@@ -1,5 +1,9 @@
 package com.myapp.cunpleuserapp.service;
 
+import com.myapp.cunpleuserapp.model.TCoupon;
+
+import java.util.List;
+
 /**
  * 业务层测试
  * @author zhaoxudong
@@ -21,4 +25,18 @@ public interface IUserService {
      * @return
      */
     Object getUserById(int i);
+
+
+    /**
+     * 获取用户的优惠券列表
+     * @return
+     */
+    List<TCoupon> getCouponList();
+
+
+    /**
+     * 获取用户拥有的优惠券列表
+     * @return
+     */
+    String query();
 }

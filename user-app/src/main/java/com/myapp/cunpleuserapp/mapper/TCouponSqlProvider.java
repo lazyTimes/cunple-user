@@ -1,23 +1,12 @@
 package com.myapp.cunpleuserapp.mapper;
 
-import static org.apache.ibatis.jdbc.SqlBuilder.BEGIN;
-import static org.apache.ibatis.jdbc.SqlBuilder.DELETE_FROM;
-import static org.apache.ibatis.jdbc.SqlBuilder.FROM;
-import static org.apache.ibatis.jdbc.SqlBuilder.INSERT_INTO;
-import static org.apache.ibatis.jdbc.SqlBuilder.ORDER_BY;
-import static org.apache.ibatis.jdbc.SqlBuilder.SELECT;
-import static org.apache.ibatis.jdbc.SqlBuilder.SELECT_DISTINCT;
-import static org.apache.ibatis.jdbc.SqlBuilder.SET;
-import static org.apache.ibatis.jdbc.SqlBuilder.SQL;
-import static org.apache.ibatis.jdbc.SqlBuilder.UPDATE;
-import static org.apache.ibatis.jdbc.SqlBuilder.VALUES;
-import static org.apache.ibatis.jdbc.SqlBuilder.WHERE;
-
 import com.myapp.cunpleuserapp.model.TCoupon;
 import com.myapp.cunpleuserapp.model.TCouponExample;
 
 import java.util.List;
 import java.util.Map;
+
+import static org.apache.ibatis.jdbc.SqlBuilder.*;
 
 public class TCouponSqlProvider {
 
@@ -48,28 +37,36 @@ public class TCouponSqlProvider {
             VALUES("pic_url", "#{picUrl,jdbcType=VARCHAR}");
         }
         
-        if (record.getReduceAmount() != null) {
-            VALUES("reduce_amount", "#{reduceAmount,jdbcType=INTEGER}");
-        }
-        
         if (record.getAchieveAmount() != null) {
             VALUES("achieve_amount", "#{achieveAmount,jdbcType=INTEGER}");
         }
         
+        if (record.getReduceAmount() != null) {
+            VALUES("reduce_amount", "#{reduceAmount,jdbcType=INTEGER}");
+        }
+        
         if (record.getStock() != null) {
-            VALUES("stock", "#{stock,jdbcType=BIGINT}");
+            VALUES("stock", "#{stock,jdbcType=INTEGER}");
         }
         
         if (record.getTitle() != null) {
             VALUES("title", "#{title,jdbcType=VARCHAR}");
         }
         
-        if (record.getCreatetime() != null) {
-            VALUES("createTime", "#{createtime,jdbcType=TIMESTAMP}");
-        }
-        
         if (record.getStatus() != null) {
             VALUES("status", "#{status,jdbcType=INTEGER}");
+        }
+        
+        if (record.getCreateTime() != null) {
+            VALUES("create_time", "#{createTime,jdbcType=TIMESTAMP}");
+        }
+        
+        if (record.getStartTime() != null) {
+            VALUES("start_time", "#{startTime,jdbcType=TIMESTAMP}");
+        }
+        
+        if (record.getEndTime() != null) {
+            VALUES("end_time", "#{endTime,jdbcType=TIMESTAMP}");
         }
         
         return SQL();
@@ -84,12 +81,14 @@ public class TCouponSqlProvider {
         }
         SELECT("code");
         SELECT("pic_url");
-        SELECT("reduce_amount");
         SELECT("achieve_amount");
+        SELECT("reduce_amount");
         SELECT("stock");
         SELECT("title");
-        SELECT("createTime");
         SELECT("status");
+        SELECT("create_time");
+        SELECT("start_time");
+        SELECT("end_time");
         FROM("t_coupon");
         applyWhere(example, false);
         
@@ -119,28 +118,36 @@ public class TCouponSqlProvider {
             SET("pic_url = #{record.picUrl,jdbcType=VARCHAR}");
         }
         
-        if (record.getReduceAmount() != null) {
-            SET("reduce_amount = #{record.reduceAmount,jdbcType=INTEGER}");
-        }
-        
         if (record.getAchieveAmount() != null) {
             SET("achieve_amount = #{record.achieveAmount,jdbcType=INTEGER}");
         }
         
+        if (record.getReduceAmount() != null) {
+            SET("reduce_amount = #{record.reduceAmount,jdbcType=INTEGER}");
+        }
+        
         if (record.getStock() != null) {
-            SET("stock = #{record.stock,jdbcType=BIGINT}");
+            SET("stock = #{record.stock,jdbcType=INTEGER}");
         }
         
         if (record.getTitle() != null) {
             SET("title = #{record.title,jdbcType=VARCHAR}");
         }
         
-        if (record.getCreatetime() != null) {
-            SET("createTime = #{record.createtime,jdbcType=TIMESTAMP}");
-        }
-        
         if (record.getStatus() != null) {
             SET("status = #{record.status,jdbcType=INTEGER}");
+        }
+        
+        if (record.getCreateTime() != null) {
+            SET("create_time = #{record.createTime,jdbcType=TIMESTAMP}");
+        }
+        
+        if (record.getStartTime() != null) {
+            SET("start_time = #{record.startTime,jdbcType=TIMESTAMP}");
+        }
+        
+        if (record.getEndTime() != null) {
+            SET("end_time = #{record.endTime,jdbcType=TIMESTAMP}");
         }
         
         applyWhere(example, true);
@@ -154,12 +161,14 @@ public class TCouponSqlProvider {
         SET("id = #{record.id,jdbcType=INTEGER}");
         SET("code = #{record.code,jdbcType=VARCHAR}");
         SET("pic_url = #{record.picUrl,jdbcType=VARCHAR}");
-        SET("reduce_amount = #{record.reduceAmount,jdbcType=INTEGER}");
         SET("achieve_amount = #{record.achieveAmount,jdbcType=INTEGER}");
-        SET("stock = #{record.stock,jdbcType=BIGINT}");
+        SET("reduce_amount = #{record.reduceAmount,jdbcType=INTEGER}");
+        SET("stock = #{record.stock,jdbcType=INTEGER}");
         SET("title = #{record.title,jdbcType=VARCHAR}");
-        SET("createTime = #{record.createtime,jdbcType=TIMESTAMP}");
         SET("status = #{record.status,jdbcType=INTEGER}");
+        SET("create_time = #{record.createTime,jdbcType=TIMESTAMP}");
+        SET("start_time = #{record.startTime,jdbcType=TIMESTAMP}");
+        SET("end_time = #{record.endTime,jdbcType=TIMESTAMP}");
         
         TCouponExample example = (TCouponExample) parameter.get("example");
         applyWhere(example, true);
@@ -178,28 +187,36 @@ public class TCouponSqlProvider {
             SET("pic_url = #{picUrl,jdbcType=VARCHAR}");
         }
         
-        if (record.getReduceAmount() != null) {
-            SET("reduce_amount = #{reduceAmount,jdbcType=INTEGER}");
-        }
-        
         if (record.getAchieveAmount() != null) {
             SET("achieve_amount = #{achieveAmount,jdbcType=INTEGER}");
         }
         
+        if (record.getReduceAmount() != null) {
+            SET("reduce_amount = #{reduceAmount,jdbcType=INTEGER}");
+        }
+        
         if (record.getStock() != null) {
-            SET("stock = #{stock,jdbcType=BIGINT}");
+            SET("stock = #{stock,jdbcType=INTEGER}");
         }
         
         if (record.getTitle() != null) {
             SET("title = #{title,jdbcType=VARCHAR}");
         }
         
-        if (record.getCreatetime() != null) {
-            SET("createTime = #{createtime,jdbcType=TIMESTAMP}");
-        }
-        
         if (record.getStatus() != null) {
             SET("status = #{status,jdbcType=INTEGER}");
+        }
+        
+        if (record.getCreateTime() != null) {
+            SET("create_time = #{createTime,jdbcType=TIMESTAMP}");
+        }
+        
+        if (record.getStartTime() != null) {
+            SET("start_time = #{startTime,jdbcType=TIMESTAMP}");
+        }
+        
+        if (record.getEndTime() != null) {
+            SET("end_time = #{endTime,jdbcType=TIMESTAMP}");
         }
         
         WHERE("id = #{id,jdbcType=INTEGER}");
