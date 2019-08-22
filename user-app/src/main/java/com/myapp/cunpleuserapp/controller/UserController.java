@@ -18,17 +18,18 @@ public class UserController {
 
 
     @Autowired
-    private IUserService userService;
+    private IUserService iUserService;
 
     @RequestMapping("/user")
     public Object test(){
-        return userService.getUserById(1);
+        return iUserService.getUserById(1);
+
     }
 
 
     @RequestMapping("/list")
     public Object list(){
 
-        return userService.getCouponList();
+        return iUserService.getCouponList();
     }
 }
